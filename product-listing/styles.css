@@ -1,0 +1,247 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --gap: 12px;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  font-size: small;
+}
+
+body {
+  margin: 20px 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 50px calc(100vh - 160px);
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  grid-area: header;
+  padding: 0 var(--gap);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-width: 745px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.search-box {
+  display: flex;
+  position: relative;
+  height: 30px;
+  align-items: center;
+  width: 220px;
+}
+
+.search-box > input {
+  border: 0;
+  background-color: #eee;
+  padding: 3px 12px;
+  width: 100%;
+  height: 28px;
+  border-radius: 2px;
+}
+
+.search-box > .fa-search {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  font-size: large;
+}
+
+.contact-tel {
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 135px;
+}
+
+.contact-tel > i {
+  font-size: x-large;
+}
+
+.contact-tel > div {
+  display: grid;
+}
+
+.contact-tel span {
+  font-size: x-small;
+}
+
+.shopping-cart-wrapper {
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  height: 45px;
+  width: 300px;
+  background-image: url("../assets/realtruck_horizontal.svg");
+}
+
+.nav {
+  grid-area: nav;
+  background-color: var(--dark);
+  color: var(--light);
+  display: flex;
+  padding: 0 var(--gap);
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(9, 1fr);
+  margin: auto;
+}
+
+.nav > ul > li {
+  align-self: center;
+}
+
+.nav > ul a {
+  display: block;
+  text-align: left;
+  color: var(--light);
+  margin: 0;
+}
+
+.nav > ul > li {
+  max-width: 80px;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero {
+  grid-area: hero;
+  background-image: url("../assets/truck.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 350px;
+}
+
+.inner-box {
+  background-color: #efbf33;
+  opacity: 0.8;
+  position: absolute;
+  bottom: var(--gap);
+  left: var(--gap);
+  display: flex;
+  width: 260px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: var(--gap);
+}
+
+.inner-box > a {
+  font-size: x-small;
+  color: var(--dark);
+  opacity: 1;
+}
+
+.inner-box > h3 {
+  font-size: x-large;
+  color: white;
+  opacity: 1;
+  margin: 0;
+}
+
+.products {
+  grid-area: products;
+  height: 100%;
+}
+
+.filter-header {
+  padding: 0px var(--gap);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  color: var(--dark);
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.filter-controls {
+  display: flex;
+  gap: var(--gap);
+}
+
+#show-num {
+  width: 32px;
+}
+
+.product-grid-wrapper {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.product-grid {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.product-grid > li {
+  padding: 5px;
+}
+
+.product-grid > li > img {
+  width: 100%;
+}
+
+.product-text {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.product-price {
+  display: flex;
+  font-size: large;
+  gap: 3px;
+}
+
+.product-price > span {
+  font-size: x-small;
+}
